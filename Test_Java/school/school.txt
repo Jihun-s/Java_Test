@@ -1,0 +1,8 @@
+[school - 학생 성적 처리 프로그램]
+학생 성적을 입력받아 저장하고 검색/ 삭제
+
+school.ui.SchoolMain - 프로그램의 시작
+school.ui.SchoolUI - 사용자 인터페이스(사용자와 만나는 부분)
+school.service.SchoolService - 기능 단위의 메소드 정의
+school.dao.SchoolDAO - 데이터 처리
+school.vo.Student/Teacher/Person - VO클래스

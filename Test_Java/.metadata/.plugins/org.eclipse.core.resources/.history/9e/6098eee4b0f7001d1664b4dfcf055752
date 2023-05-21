@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 게시판 정보 처리 SQL -->
+<mapper namespace="board.dao.BoardMapper">
+
+<!-- 회원 정보 저장 -->
+<insert id="insertMember" parameterType="member">
+insert into member values(#{id}, #{password}, #{name})
+</insert>
+
+<!-- 회원 정보 조회 -->
+<select id="getMember" parameterType="string" resultType="member">
+select* from member where id = #{id}
+</select>
+
+<!-- 글 저장 -->
+<insert id="insertBoard" parameterType="board">
+insert into board (num, id, title, contents)
+values(board_seq.nextval, #{id},#{title},#{contents})
+</insert>
+
+<!-- 글 목록 조회 -->
+<select id="getList" resultType="board">
+select
+	num
+	,(select name from member where board.id = member.id) name
+	, title
+	, to_char(inputdate, 'yy/mm/dd') inputdate<!-- 엘리어스 inputdate로 맞춰줌 -->
+from 
+	board
+order by
+	num desc
+</select>
+
+<!-- 글 번호로 글 하나 읽기 -->
+<select id="searchNum" parameterType="string" resultType="board">
+select * from Board where num like #{num}
+</select>
+
+<!-- 글 검색(작성자별로/ 글제목으로) -->
+<select id="searchContents" parameterType="string" resultType="board">
+select * from Board 
+where 	upper(title) like upper('%'||#{s}||'%') 
+		or upper(contents) like upper('%'||#{s}||'%')
+order by
+		id
+</select>
+
+<!-- 글 삭제 -->
+<delete id="delete" parameterType="string"><!-- 원래는 넘버임.. -->
+delete from Board where num = #{num} and id=#{id}	<!-- 그냥 숫자니까 #{아무거나} -->
+</delete>
+
+<!-- 게시글 수정 -->
+<update id="updateBoard" parameterType="board">
+update board set title = #{title}, contents = #{contents} where num = #{num}
+</update>
+
+<!-- 조회수. 한 사람이 읽을 때마다 컬럼값++ -->
+
+</mapper>

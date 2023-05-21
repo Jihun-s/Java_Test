@@ -1,0 +1,17 @@
+1. Mybatis 다운
+
+2.Eclipse, SQL developer 사용
+
+3.jdbc, mybatis driver 필요
+
+C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar
+C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext 폴더로 복사
+
+https://blog.mybatis.org/ 접속
+Products -> Mybatis3 download -> mybatis-3.5.13.zip 다운로드 후 압축해제
+mybatis-3.5.13.jar 파일을 다음 경로에 복사
+C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext 폴더로 복사
+
+4. Eclipse 실행
+  window - preferences - Java - Installed JREs 
+-> 위의 경로로 (C:\Program Files\Java\jdk1.8.0_341)로 되어있는지 확인

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 회원정보 처리 SQL -->
+<mapper namespace="test.dao.PersonMapper">
+
+<!-- 회원 정보 저장 -->
+<insert id="insertPerson" parameterType="person">
+insert into person (
+	num
+	, name
+	, age
+)
+values (
+	person_seq.nextval
+	, #{name}		<!-- # = get name 이라는 의미 -->
+	, #{age}
+)
+</insert>
+
+<!-- 회원 정보 삭제 -->
+<delete id="deletePerson" parameterType="java.lang.Integer">
+delete from person where num = #{num}	<!-- 그냥 숫자니까 #{아무거나} -->
+</delete>
+
+<!-- 회원 정보 수정 -->
+<update id="updatePerson" parameterType="person">
+update person set name = #{name}, age = #{age} where num = #{num}
+</update>
+
+<!-- 한개 회원 정보 조회 -->
+<select id="selectOne" parameterType="int" resultType="person">
+select* from person where num = #{num}
+</select>
+
+<!-- 전체 회원 조회 -->
+<select id="selectALL" resultType="person">
+select* from person
+</select>
+
+<!-- 이름으로 검색 -->
+<select id="selectName" parameterType="string" resultType="person">
+select* from person where name like '%'||#{name}||'%'
+</select>
+
+
+
+</mapper>

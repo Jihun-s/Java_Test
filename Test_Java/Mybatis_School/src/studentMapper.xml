@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 학생 정보 처리 SQL -->
+<mapper namespace="school.dao.StudentMapper">
+
+<!-- 학생 정보 저장 -->
+<insert id="insert" parameterType="student">
+insert into student values(#{name}, #{id}, #{phone}, #{kor}, #{eng}, #{mat})
+</insert>
+
+<!-- 전체 회원 조회 -->
+<select id="getList" resultType="student">
+select* from Student
+</select>
+
+<!-- 이름으로 검색 -->
+<select id="searchName" parameterType="string" resultType="student">
+select* from Student where name like '%'||#{name}||'%'
+</select>
+
+<!-- 회원 정보 삭제 -->
+<delete id="delete" parameterType="string">
+delete from Student where id = #{id}	<!-- 그냥 숫자니까 #{아무거나} -->
+</delete>
+
+</mapper>
