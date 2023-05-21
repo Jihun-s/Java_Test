@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>테이블</title>
+    <style>
+        /* CSS를 담당 */
+        table th {
+            background-color: burlywood;
+        }
+        h1 {
+            background-color: aqua;
+        }
+        table tfoot {
+            background-color: blueviolet;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>테이블 태그</h1>
+    
+    <table border="1">
+        <!-- col:행 /  row:열 -->
+        <tr style="height: 100px;">
+            <td style="width: 200px; text-align: center; background-color :aliceblue; font-size:xxx-large;" colspan="4">1</td>
+            
+        </tr>
+        <tr style="height: 100px;">
+            <td style="width: 200px; background-color: aquamarine; text-align: center; font-size:xxx-large;" colspan="2" rowspan="2">2</td>
+            
+            <td style="background-color: bisque; text-align: center; font-size:xxx-large;">3</td>
+            <td style="background-color: mediumspringgreen; text-align: center; font-size:xxx-large;">4</td>
+        </tr>
+        <tr style="height: 100px;">
+            <td style="width: 100px; background-color: blueviolet; text-align: center; font-size:xxx-large;">5</td>
+            
+            <td style="background-color: yellowgreen; text-align: center; font-size:xxx-large;">6</td>
+            
+        </tr>
+        <tr style="height: 100px;">
+            <td style="width: 200px; background-color: aqua; text-align: center; font-size:xxx-large;" colspan="2">7</td>
+            
+            <td style="width: 200px; background-color: lime; text-align: center; font-size:xxx-large;" colspan="2">8</td>
+            
+        </tr>
+    </table>
+    <hr>
+    <table border="1">
+        <caption><strong>Browser</strong></caption>
+        <tr style="height: 80px;">
+            <!-- 제목은 th로 따로 지정시 특정에 유리 -->
+            <th>브라우저</th>
+            <th>제조업체</th>
+            <th>다운로드</th>
+        </tr>
+        <tr style="height: 80px;">
+            <td>크롬(Chrome)</td>
+            <td>Google</td>
+            <td>https://www.google.com</td>
+        </tr>
+        <tr style="height: 80px;">
+            <td>파이어폭스(Firefox)</td>
+            <td>Mozila</td>
+            <td>https://www.mozila.org</td>
+        </tr>
+        <tr style="height: 80px;">
+            <td>엣지(Edge)</td>
+            <td>Microsoft</td>
+            <td>https://www.microsoft.com</td>
+        </tr>
+    </table>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+
+        </tfoot>
+    </table>
+    <a href="../main/home2.html" target="_self">
+        <img src="../images/home11.png" alt="홈 버튼" style="width: 50px">
+    </a>
+</body>
+</html>

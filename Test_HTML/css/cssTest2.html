@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Test2</title>
+    <style>
+        #block img{
+            display: block;
+            /* 
+                block, inline, inline-block, none ... 
+                flex, grid ...
+            */
+        }
+        div {
+            width: 200px;
+            height: 100px;
+            display: inline-block;
+            margin: 15px;
+            border-width: 5px; /* 테두리 굵기 */
+        }
+        .box1 { border-style: solid;
+            border-color: red;
+            border-radius: 10px;
+            box-shadow: 2px -2px 5px 0px black;
+            /* 수평거리 수직거리 흐림정도 번짐정도 색상 */
+        
+        }  /* 실선 */
+        .box2 { border-style: dotted;} /* 점선 */
+        .box3 { border-style: dashed;} /* 선으로 된 점선 */
+    </style>
+</head>
+<body>
+    <!-- <div id="inline">
+        <img src="../images/neko.jpg">
+        <img src="../images/railway-hdr-1361893.jpg" width="277">
+        <img src="../images/neko.jpg">
+    </div>
+    <div id="block">
+        <img src="../images/neko.jpg"> 
+        <img src="../images/neko.jpg"> 
+        <img src="../images/neko.jpg"> 
+    </div> -->
+
+    <!-- 테두리 속성 -->
+    <a href="../main/home2.html" target="_self">
+        <img src="../images/home11.png" alt="홈 버튼" style="width: 50px">
+    </a>
+    
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    
+</body>
+</html>

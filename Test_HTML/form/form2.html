@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Tag2</title>
+</head>
+    <!-- 서버로 넘기려면
+    action 필요/ name 필요/ value 필요 -->
+<body>
+    <h1>Form2</h1>
+    <a href="../main/home2.html" target="_self">
+        <img src="../images/home11.png" alt="홈 버튼" style="width: 50px">
+    </a>
+    <form action="" method="get">
+        <!-- 여러가지 속성 -->
+        아이디<input type="text" placeholder="(아이디는 6자이상)"><br>
+        이름<input type="text" autofocus><br>
+        내용<input type="text" readonly value="읽기 전용"><br>
+        필수<input type="text" required><!--form 안에 묶여있어야 함-->
+
+        <!-- select --><br>
+        <label for="c">학과</label>
+        <select id="c" name="c" size="2" multiple>
+            <optgroup label="공과대학">
+                <option value="1">건축공학과</option>
+                <option value="2">기계공학과</option>
+                <option value="3" selected>산업공학과</option>
+                <option value="4">전기전자공학과</option>
+                <option value="5">컴퓨터공학과</option>
+            </optgroup>
+            <optgroup label="인문대학">
+                <option value="6">사학과</option>
+                <option value="7">어문학부</option>
+                <option value="8">철학과</option>
+            </optgroup>
+        </select>
+        <textarea name="contents" cols="60" rows="5"></textarea>
+
+        <br><input type="submit" value="전송">
+    </form>
+</body>
+</html>

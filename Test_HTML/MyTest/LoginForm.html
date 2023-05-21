@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoginTest</title>
+    <link href="LoginForm.css" rel="stylesheet">
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form action="../main/home2.html" method="get">
+        <!-- 필수 정보 양식 ---------------------------------------->
+        <div id="body">
+            <fieldset id="f1" style="display: flex; flex-direction: column; width: 300px;">
+                <legend>필수 정보</legend>
+                <div style="display: flex; justify-content: space-between;">
+                    <label for="id">아이디</label>
+                <input type="text" name="id" id="id" required>
+                </div>
+            <br>
+            <div style="display: flex; justify-content: space-between;">
+                <label for="pwd">비밀번호</label>
+                <input type="password" name="pwd" id="pwd" required>
+            </div>
+            <br>
+            <div style="display: flex; justify-content: space-between;">
+                비밀번호 확인<input type="password" name="pwd" id="pwd" required>
+            </div>
+            <br>
+            <div style="display: flex; justify-content: space-between;">
+                <label for="email">E-mail</label>
+                <input type="email" name="E-mail" required>
+            </div>
+            <br>
+            <div style="display: flex; justify-content: space-between;">
+                핸드폰<input type="tel" required>
+            </div>
+        </fieldset>
+
+        
+        <fieldset style="display: flex; flex-direction: column; width: 300px;">
+            <legend>선택 입력</legend>
+            <div style="display: flex; justify-content: space-between;">
+                <label for="btd">생년월일</label>
+                <input type="date" name="btd" id="btd">
+            </div>
+            <br>
+            <div style="display: flex; justify-content: space-between;">
+                <label for="mbti">MBTI</label>
+                <select id="mbti">
+                    <option>INTJ</option>
+                    <option>INTP</option>
+                    <option>INFJ</option>
+                    <option>INFP</option>
+                    <option>ISTJ</option>
+                    <option>ISTP</option>
+                    <option>ISFJ</option>
+                    <option>ISFP</option>
+                    <option>ENTJ</option>
+                    <option>ENTP</option>
+                    <option>ENFJ</option>
+                    <option>ENFP</option>
+                    <option>ESTJ</option>
+                    <option>ESTP</option>
+                    <option>ESFJ</option>
+                    <option>ESFP</option>
+                </select>
+            </div><br>
+            <div style="display: flex; justify-content: space-between;">
+                관심분야<label>
+                    <input type="radio" name="itd" value="jp">
+                    일본어
+                </label>
+                <label>
+                    <input type="radio" name="itd" value="it">
+                    IT
+                </label>
+                <label>
+                    <input type="radio" name="itd" value="none">
+                관심없음
+            </label>
+        </div><br>
+        <div style="display: flex; justify-content: space-between;">
+            파일<input type="file">
+        </div>
+    </fieldset>
+</div>
+<div>
+    <br><input type="submit" value="가입">
+    <input type="button"
+    onclick="location.href='../main/home2.html'" value="취소">
+</div>
+<a href="../main/home2.html" target="_self">
+    <img src="../images/home11.png" alt="홈 버튼" style="width: 50px">
+</a>
+</form>
+</body>
+</html>

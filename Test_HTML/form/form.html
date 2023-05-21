@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tag</title>
+</head>
+<body>
+    <h1>Form</h1>
+    <a href="../main/home2.html" target="_self">
+        <img src="../images/home11.png" alt="홈 버튼" style="width: 50px">
+    </a>
+    <!-- Form 등의 태그를 통해
+    C → 내용 + 요청 → S
+    S → 내용 + 웹문서(html) → S -->
+    <form action="../main/home2.html" method="get">
+        <!-- method 방식 ↑
+            1. get : 주소 표시줄에 사용자가 입력한 내용이 그대로    
+                    드러난다. 256byte ~ 4096byte까지 서버로 데이터 전송.
+            2. post : 입력 내용의 길이에 제한을 받지 않고 사용자가
+                    입력한 내용이 드러나지 않는다. 객체도 가능
+        -->
+       <label for="id">아이디
+            <input type="text" name="id" id="id">
+        </label><br>
+       <label for="pwd">비밀번호
+            <input type="password" name="pwd" id="pwd">
+        </label><br>
+        
+        <!-- radio & checkbox -->
+        <label>
+            <input type="radio" name="subject" value="eng">
+            영어회화
+        </label>
+        <label>
+            <input type="radio" name="subject" value="ch">
+            중국어회화
+        </label>
+        <label>
+            <input type="radio" name="subject" value="jp">
+            일어회화
+        </label><br>
+        <!-- Alt + ↓↑ 해당 행 이동 -->
+        <!-- 복사 : Alt + shift + ↓↑ -->
+        <label>
+            <input type="checkbox" name="field" value="grm">
+            문법
+        </label>
+        <label>
+            <input type="checkbox" name="field" value="wr">
+            작문
+        </label>
+        <label>
+            <input type="checkbox" name="field" value="rd">
+            독해
+        </label><br>
+
+        <!-- 폼 요소 그룹으로 묶기
+        ex) 필수입력 & 선택입력 -->
+        <fieldset>
+            <legend>개인정보</legend>
+            <label for="name">이름</label>
+            <input type="text" id="name">
+            <input type="hidden" name="hidden" value="3">
+        </fieldset>
+
+        검색<input type="search"><br>
+        URL<input type="url"><br>
+        E-mail<input type="email" name="email"><br>
+        <!-- tel타입은 모바일 화면에서 숫자패드가 활성화됨 -->
+        tel<input type="tel"><br>
+        숫자<input type="number"><br>
+        범위<input type="range" min="1" max="7" step="2"><br>
+        색상<input type="color"><br>
+        날짜1<input type="date"><br>
+        날짜1<input type="month"><br>
+        날짜1<input type="week"><br>
+        시간1<input type="time"><br>
+        <!-- datetime타입은 HTML5에서 제외된 코드. 사용 불가 -->
+        시간1<input type="datetime" value="2016-03-02T09:00"><br>
+
+        시작시간<input type="datetime-local" value="2016-03-02T09:00"><br>
+        종료시간<input type="datetime-local" value="2016-03-02T18:00"><br>
+        <input type="reset" value="리셋">
+        <input type="button" value="버튼" onclick="alert('버튼 누름');"><br>
+        <input type="file">
+
+        <br><input type="submit" value="전송">
+    </form>
+</body>
+</html>
