@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css1</title>
+
+    <style>
+        /* CSS의 주석 */
+        h1 { 
+            color: brown;       /* 글자 색 */
+            font-size: 30px;
+            text-align: center;
+            background-color: yellow;
+            width:300px;
+            height: 40px;
+            /* border-color: blue;
+            border-width: 2px;
+            border-style: dotted; */
+            border: 2px dotted blue;
+            border-radius: 10px 10px;
+            margin:10px auto;
+
+        }
+        p { color: green; }
+       
+        #redtext { color: red;}
+        .bluetext {color: blue;}
+
+        #testDiv {
+            width: 300px;
+            height: 400px;
+            background-color: blue;
+            color: white;
+            background-image: url('image/sky.jpg');
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+            background-origin: content-box;
+            border: 10px solid yellow;
+            padding: 10px;
+
+        }
+
+        #a {
+            width:100px;
+            height:100px;
+            background-color: red;
+            display: none;
+        }
+        #b {
+            width:50px;
+            height:100px;
+            background-color: blue;
+            display: inline;
+        }
+        #c {
+            width:150px;
+            height:150px;
+            background-color: yellow;
+            display: inline;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>[ CSS의 선택자 ]</h1>
+    <p>p태그 사용한 문자열</p>
+    <p id="redtext">p태그 사용한 문자열</p>
+    <p class="bluetext">p태그 사용한 문자열</p>
+    <p class="bluetext">p태그 사용한 문자열</p>
+    <div>
+        <p style="color:aqua; background-color: yellow;">p태그 사용한 문자열</p>
+        <p>p태그 사용한 문자열</p>
+    </div>
+    <div>
+        <div>
+            <p>p태그 사용한 문자열</p>
+            <p>p태그 사용한 문자열</p>
+        </div>
+    </div>
+
+    <div style="width:100px; height:100px; border:2px solid black;
+                text-overflow: clip; overflow-y: scroll;">
+        div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 
+        div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 
+    </div>
+
+    <div id="testDiv">
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    </div>
+
+    <div id="a"></div>
+    <div id="b"></div>
+    <div id="c"></div>
+</body>
+</html>

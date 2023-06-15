@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 유효성 검사</title>
+    <script>
+        function check(){
+            //id가 'name'인 객체를 변수 n이 참조하게 한다.
+            let n = document.getElementById('name');            //n은 객체.
+
+            if(n.value == ''){                                  //n의 value값 (String) 만 가져오는거
+                //alert('이름을 입력하세요.');
+                document.getElementById('errName').innerHTML = '이름을 입력하세요.';
+                return false;
+            }else{
+                document.getElementById('errName').innerHTML = '';
+            }
+
+            //"나이를 입력하세요." / "나이를 숫자로 입력하세요." / "나이를 양수로 입력하세요."
+            let a = document.getElementById('age').value;       //객체에서 String만 가져온거, .value.length 는 길이의 숫자 값만 가져오게 됨
+            // a.value = '1234';    이렇게 대입도 가능함.
+            if(a == ''){
+                alert("나이를 입력하세요.");
+                document.getElementById('errAge').innerHTML = '나이를 입력하세요.';
+                return false;
+            }else{
+                document.getElementById('errAge').innerHTML = '';
+            }
+            if(isNaN(a)){
+                alert("나이를 숫자로 입력하세요.");
+                return false;
+            }
+            if(parseInt(a) < 1){
+                alert("나이를 양수로 입력하세요.");
+                return false;
+            }
+            
+            //ID
+            let id = document.getElementById('id');
+            if(id.value.length<5 || id.value.length>10){
+                alert("ID는 5~10 글자로 입력하세요.");
+                document.getElementById('errID').innerHTML = 'ID는 5~10 글자로 입력하세요.';
+                id.focus();
+                id.select();
+                id.value = '';
+                return false;
+            }else{
+                document.getElementById('errID').innerHTML = '';
+            }
+
+            //PassWord
+            let ps = document.getElementById('password').value;
+            if(ps == ''){
+                alert("PassWord를 입력하세요.")
+                return false;
+            }
+
+            let job = document.getElementById('job');
+            alert(job.selectedIndex);
+            alert(job.value);
+
+            return true;
+        }
+
+        function calc(){
+            let mathSign = document.getElementById("mathSign").value;
+            let num1 = +document.getElementById("num1").value;
+            let num2 = +document.getElementById("num2").value;
+            let result;
+            if (mathSign === "-") {
+                result = num1 - num2;
+            } else if (mathSign == "*") {
+                result = num1 * num2;
+            } else if (mathSign === "/") {
+                result = num1 / num2;
+            } else if (mathSign === "+") {
+                result = num1 + num2;
+            }
+            if(result!="Infinity")
+            document.getElementById("answer").value = result;
+            else
+            document.getElementById("answer").value = '0으로 나눌 수 없습니다.';
+        }
+    </script>
+</head>
+<body>
+    <h1>Form 유효성 검사</h1>
+                                                                <!-- Serve로 보내는건 ' name '  -->
+    <form action="js1.html" method="get" onsubmit="return check()">       
+        이름    <input type="text" name="name" id="name"><span style="color: red;" id="errName"></span><br>
+        나이    <input type="text" name="age" id="age"><span style="color: red;" id="errAge"></span><br>
+        ID      <input type="text" name="id" id="id"><span style="color: red;" id="errID"></span><br>
+        PASSWORD<input type="password" name="password" id="password"><br>
+        직업    <select id="job">
+                    <option value="">직업을 선택하세요.</option>
+                    <option value="학생">학생</option>
+                    <option value="회사원">회사원</option>
+                </select><br>
+
+        <input type="submit" value="전송">
+    </form>
+    <hr>
+    <!--input태그로 쓸 수 있는 입력란 3개!
+        바로 옆에 -, *, / 선택 가능한 select
+        계산 버튼 누를 시 3번쨰 칸에 결과값!-->
+    <form action="">
+        <input type="text" name="num1" id="num1">
+        <select name="mathSign" id="mathSign">
+            <option value="+">[ + ]</option>
+            <option value="-">[ - ]</option>
+            <option value="*">[ * ]</option>
+            <option value="/">[ / ]</option>
+        </select>
+        <input type="text" name="num2" id="num2">
+        =
+        <input type="text" name="answer" id="answer">
+        <input type="button" value="계산" onclick="calc()">
+    </form>
+</body>
+</html>

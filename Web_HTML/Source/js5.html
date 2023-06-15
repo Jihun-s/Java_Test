@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+ 
+    <script>
+        function check() {
+            //id가 'name'인 객체를 변수n이 참조하게 한다.
+            let n = document.getElementById('name');
+
+            if (n.value == '') {
+                //alert('이름을 입력하세요.');
+                document.getElementById('errName').innerHTML = '이름을 입력하세요.';
+                return false;
+            }
+
+            let a = document.getElementById('age');
+
+            if(a.value == '') {
+                alert("나이를 입력하세요.");
+                return false;
+            }
+            if (isNaN(a.value)) {
+                alert("나이를 숫자로 입력하세요.");
+                return false;
+            }
+            if (parseInt(a.value) < 1) {
+                alert("나이를 양수로 입력하세요.");
+                return false;
+            }
+
+            let id = document.getElementById('id');
+            if (id.value.length < 5 || id.value.length > 10) {
+                alert('ID는 5~10 글자로 입력하세요.');
+                id.focus();
+                id.select();
+                return false;
+            }
+
+            let job = document.getElementById('job');
+            if (job.selectedIndex == 0) {
+                alert('직업을 선택하세요.');
+                return false;
+            }
+
+            return true;
+        }
+
+        //계산기
+        function calc() {
+            let n1 = document.getElementById('num1');
+            let n2 = document.getElementById('num2');
+            let n3 = document.getElementById('num3');
+            let op = document.getElementById('op');
+            
+            if (n1.value == '' || isNaN(n1.value)) {
+                alert('숫자를 입력하세요.');
+                n1.focus();
+                n1.select();
+                return;
+            }
+            if (n2.value == '' || isNaN(n2.value)) {
+                alert('숫자를 입력하세요.');
+                n2.focus();
+                n2.select();
+                return;
+            }
+
+            switch (op.value) {
+                case '+' : n3.value = Number(n1.value) + Number(n2.value); break;
+                case '-' : n3.value = Number(n1.value) - Number(n2.value); break;
+                case '*' : n3.value = Number(n1.value) * Number(n2.value); break;
+                case '/' : 
+                    if (n2.value == 0) {
+                        alert('0으로 나눌 수 없습니다.');
+                        n2.focus();
+                        n2.select();
+                        return;
+                    }
+                    n3.value = Number(n1.value) / Number(n2.value);
+            }
+        }
+    </script>
+    <style>
+        .error {
+            color : red;
+            font-weight: bold;
+        }
+        .calc * {
+            font-size: 20px;
+        }
+        .num {
+            width: 80px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>[ Form 유효성 검사 ]</h1>
+
+    <form action="js1.html" method="get" onsubmit="return check()">
+        이름 <input type="text" name="name" id="name">
+             <span class="error" id="errName"></span><br>
+        나이 <input type="text" name="age" id="age"><br>
+        ID   <input type="text" name="id" id="id"><br>
+
+        직업 <select id="job">
+                <option value="">직업을 선택하세요.</option>
+                <option value="학생">학생</option>
+                <option value="회사원">회사원</option>
+            </select>
+        <br>
+        <input type="submit" value="전송">
+    </form>
+
+    <hr>
+    <form class="calc">
+        <input type="text" class="num" id="num1">
+        <select id="op">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" class="num" id="num2">
+        <spen> = </spen>
+        <input type="text" class="num" id="num3" readonly>
+        <input type="button" value="계산" onclick="calc()">
+    </form>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        button {
+            width: 70px;
+            height: 50px;
+            text-align: center;
+            border: 1px solid black;
+            font-size: 25px;
+            margin: 4px;
+            font-weight: bold;
+        }
+
+        #result {
+            width: 300px;
+            height: 30px;
+            background-color: white;
+            margin-bottom: 10px;
+            padding: 5px;
+            margin: 4px;
+            text-align: right;
+        }
+
+        #box {
+            background-color: lightgrey;
+            padding: 6px;
+            width: fit-content;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        let operand1 = '';
+        let operand2 = '';
+        let operator = '';
+        let scr = false;
+
+        function appendNumber(number) {
+            if (scr) {
+                clearResult();
+            }
+            if (operator === '') {
+                operand1 += number;
+            } else {
+                operand2 += number;
+            }
+            updateDisplay();
+        }
+
+        function appendOperator(op) {
+            if (scr) {
+                scr = false;
+            }
+            operator = op;
+            updateDisplay();
+        }
+
+        function calculateResult() {
+            let result;
+            const num1 = parseFloat(operand1);
+            const num2 = parseFloat(operand2);
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num1 / num2;
+                    break;
+            }
+            operand1 = result.toString();
+            operand2 = '';
+            operator = '';
+            scr = true;
+            updateDisplay();
+        }
+
+        function clearResult() {
+            operand1 = '';
+            operand2 = '';
+            operator = '';
+            scr = false;
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            let displayValue = '';
+            if (operand1) {
+                displayValue += operand1;
+            }
+            if (operator) {
+                displayValue = operator + ' ' + operand1;
+            }
+            if (operand2) {
+                displayValue = operand2;
+            }
+            document.getElementById('result').textContent = displayValue;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <div id="result"></div>
+        <table>
+            <tr>
+                <td><button onclick="appendNumber(7)">7</button></td>
+                <td><button onclick="appendNumber(8)">8</button></td>
+                <td><button onclick="appendNumber(9)">9</button></td>
+                <td><button onclick="appendOperator('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="appendNumber(4)">4</button></td>
+                <td><button onclick="appendNumber(5)">5</button></td>
+                <td><button onclick="appendNumber(6)">6</button></td>
+                <td><button onclick="appendOperator('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="appendNumber(1)">1</button></td>
+                <td><button onclick="appendNumber(2)">2</button></td>
+                <td><button onclick="appendNumber(3)">3</button></td>
+                <td><button onclick="appendOperator('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="appendNumber(0)">0</button></td>
+                <td><button onclick="clearResult()">C</button></td>
+                <td><button onclick="calculateResult()">=</button></td>
+                <td><button onclick="appendOperator('/')">/</button></td>
+            </tr>
+        </table>
+    </div>
+    <p><img src="" alt=""></p>
+</body>
+
+</html>

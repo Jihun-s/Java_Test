@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>[ Thymeleaf 2 ]</title>
+</head>
+<body>
+	<h1>[ Thymeleaf 2 ]</h1>
+	
+	<h2>* 반복문</h2>
+	[[${slist}]]<br>
+	[[${map}]]<br>
+	
+	<div th:each="item : ${slist}">
+		<p th:text="${item}"></p>
+	</div>
+	<table border="1">
+		<tr th:each="item, i : ${slist}">
+			<td>
+				<p th:text="${item}"></p>
+				<p th:text="${i.index}"></p>
+			</td>
+		</tr>
+	</table>
+	<table border="1">
+		<tr th:each="item, i : ${map}">
+			<td>
+				<p th:text="${item.key}"></p>
+				<p th:text="${item.value}"></p>
+			</td>
+		</tr>
+	</table>
+	
+	<th:block th:each="n, status: ${#numbers.sequence(1, 5, 1)}">
+	<p>숫자
+		<span th:text="${status.index}"></span>,
+		<span th:text="${status.count}"></span>,
+		<span th:text="${status.size}"></span>,
+		<span th:text="${status.even}"></span>,
+		<span th:text="${status.odd}"></span>,
+		<span th:text="${status.first}"></span>,
+		<span th:text="${status.last}"></span>,
+		<span th:text="${n}">1</span>
+		<hr th:if="${status.count == 3}">
+	</p>
+	</th:block>
+	<th:block th:each="n, status: ${#numbers.sequence(10, 50, 10)}">
+	<span th:text="${n}"></span>
+	<span th:if="${n!=50}"> + </span>
+	<span th:if="${n==50}"> = </span>
+	</th:block>
+</body>
+</html>

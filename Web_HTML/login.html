@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <table>
+        <tbody>
+            <tr>
+                <td style="width: 193px; font: 20px malgun gothic; vertical-align: top; 
+                letter-spacing: -1px; padding: 25px 0 0 10px;">
+                    기본 정보 입력
+                </td>
+                <td style="padding: 25px 0 0 0;">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <!--계정 : 인증-->
+                        <tbody>
+                            <!--이름-->
+                            <tr>
+                                <td width="115" style="color: #333333; font-size: 12px;">이름
+                                </td>
+                                <td style="padding: 7px 0 7px 0;">
+                                    <input type="text" name="CustomerName">
+                                </td>
+                            </tr>
+                            <!--아이디-->
+                            <tr>
+                                <td style="color: #333333; font-size: 12px;">아이디
+                                </td>
+                                <td style="padding: 7px 0 7px 0;">
+                                    <input type="text" name="id" maxlength="20" placeholder="4~20자리">
+                                </td>
+                            </tr>
+                            <!--공통 : 이메일-->
+                            <tr>
+                                <td style="color: #333333; font-size: 12px;">이메일
+                                </td>
+                                <td style="padding: 7px 0 7px 0;">
+                                    <input type="text" name="Email" placeholder="email">
+                                    <span>@</span>
+                                    <input type="text" name="EmailDomainText" placeholder="xxxx.com">
+                                    <select name="EmailDomain" id="EmailDomain"></select>
+                                </td>
+                            </tr>
+                            <!--공통 : 비밀번호-->
+                            <tr>
+                                <td style="color: #333333; font-size: 12px;">비밀번호
+                                </td>
+                                <td style="padding: 7px 0 7px 0;">
+                                    <input type="password" name="password" maxlength="16" placeholder="8~16자리">
+                                </td>
+                            </tr>
+                            <!--공통 : 비밀번호(재확인)-->
+                            <tr>
+                                <td style="color: #333333; font-size: 12px;">비밀번호 재입력
+                                </td>
+                                <td style="padding: 7px 0 7px 0;">
+                                    <input type="password" name="passwordVerify" maxlength="16" placeholder="8~16자리">
+                                </td>
+                            </tr>
+                            <!--공통 : 연락처-->
+                            <tr>
+                                <td style="color: #333333; font-size: 12px;">휴대전화
+                                </td>
+                                <td style="padding: 7px 0 7px 0;">
+                                    <input type="text" name="hp1" maxlength="4" style="width: 44px; vertical-align: middle;">
+                                    -
+                                    <input type="text" name="hp2" maxlength="4" style="width: 44px; vertical-align: middle;">
+                                    -
+                                    <input type="text" name="hp3" maxlength="4" style="width: 44px; vertical-align: middle;">
+                                </td>
+                            </tr>
+                            <!--개인 정보 유효기간-->
+                            <tr>
+                                <td width="115" style="color: #333333;padding: 15px 0 0 0; vertical-align: top; font-size: 12px;">
+                                    개인정보 유효기간
+                                </td>
+                                <td>
+                                    <input type="radio" checked name="SleepExtendTears" value="1">
+                                    <label for="SleepExtendTears1">1년</label>
+                                    <input type="radio" checked name="SleepExtendTears" value="3">
+                                    <label for="SleepExtendTears3">3년</label>
+                                    <input type="radio" checked name="SleepExtendTears" value="5">
+                                    <label for="SleepExtendTears5">5년</label>
+                                    <input type="radio" checked name="SleepExtendTears" value="99">
+                                    <label for="SleepExtendTears99">탈퇴 시까지</label><br>
+                                    설정된 개인정보 유효기간 동안 로그인 등 이용이 없으면 휴면계정이 되어 개인정보가 별도 분리 보관, 각종 뉴스레터, 메일, 문자를 수신할 수 없습니다.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="submit" value="전송"><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

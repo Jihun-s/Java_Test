@@ -1,0 +1,6 @@
+Web Server	->	Web Application	->	응답	ex) HTML Page..
+Client	->	Web Browser	->	요청
+
+
+HTML, CSS, JavaScript / Java / Oracle
+(jQuery)	    (Spring Boot, Mybatis)

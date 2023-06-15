@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>[ spring2 ]</title>
+</head>
+<body>
+	<h1>[ spring2 ]</h1>
+	<ol>
+		<li>Lonbok & Logger</li>
+			<ul>
+				<li><a href="lom/lombok">롬복 테스트</a></li>
+				<li><a href="lom/logger">로그 테스트</a></li>
+			</ul>
+		<li>서버와 값 주고받기
+			<ul>
+				<li><a href="param/input1">Post method로 parameter 전달1</a></li>
+				<li><a href="param/input2">Post method로 parameter 전달2</a></li>
+				<li><a href="param/input3?name=abc&age=11">GET method로 parameter 전달</a></li>
+				<li><a href="param/input3?age=11">GET method로 parameter 전달</a></li>
+				<li><a href="param/input3">GET method로 parameter 전달</a></li>
+				<li><a href="param/model">Model 사용하기</a></li>
+			</ul>
+		</li>
+		<li>세션 사용
+			<ul>
+				<li><a href="ss/session1">세션의 저장</a></li>
+				<li><a href="ss/session2">세션에서 읽기</a></li>
+				<li><a href="ss/session3">세션에서 삭제</a></li>
+				<li	th:if="${session.loginId == null}"><a href="ss/login">로그인</a></li>
+				<li	th:if="${session.loginId != null}"><a href="ss/logout">로그아웃</a></li>
+				<li th:if="${session.loginId != null}"><span th:text="${session.loginId}">0000</span>님 접속중</li>
+			</ul>
+		</li>
+		<li>쿠키 사용
+			<ul>
+				<li><a href="ck/cookie1">쿠키 저장</a></li>
+				<li><a href="ck/cookie2">쿠키 삭제</a></li>
+				<li><a href="ck/cookie3">쿠키 읽기</a></li>
+			</ul>
+		</li>
+		<li>Thymeleaf 사용
+			<ul>
+				<li><a href="th/thymeleaf1">타임리프 문법 1</a></li>
+				<li><a href="th/thymeleaf2">타임리프 문법 2</a></li>
+			</ul>
+		</li>
+		<li>연습문제
+			<ul>
+				<li><a href="ex/calc1">폼에 입력한 값 계산하기</a></li>
+				
+				<li><a href="ex/showForm">방문 횟수 카운트</a></li>
+				<li><a href="ex/deleteCookie">쿠키DEL</a></li>
+			</ul>
+		</li>
+	</ol>
+</body>
+</html>

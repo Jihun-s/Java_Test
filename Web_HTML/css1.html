@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS1</title>
+    <style>
+        /* CSS의 주석 */
+        h1{
+            color: brown;              /* 글자 색 */
+            font-size: 30px;
+            text-align: center;
+            background-color: yellow;
+            width: 50%;
+            height: 40px;
+            /* border-color: blue;
+            border-width: 2px;
+            border-style: dotted; */
+            border: 2px dotted blue;
+            border-radius: 10px 10px;     /*둥굴게둥굴게*/
+            margin: 10px auto;
+        }
+        p { color: green;}
+
+        #redtext{color:red}             /* ID = # */
+        .bluetext{color:blue}           /* Class = . */
+        #textDiv{
+            width: 300px;
+            height: 400px;
+            background-color: blue;
+            color: white;
+            background-image: url('../Test_HTML/images/hiyoko.png');
+            background-size: 200px;
+            background-repeat: no-repeat;
+            background-origin: content-box;
+            padding: 30px;
+            border: 10px solid yellow;
+            margin: 30px;
+        }
+
+        #a{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            display: none;              /*안보여줌. 시간초과나 무언가 눌렀을때 조건..으로..*/
+        }
+        #b{
+            width: 50px;
+            height: 100px;
+            background-color: blue;
+            display: inline;
+        }
+        #c{
+            width: 150px;
+            height: 150px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>[ CSS의 선택자 ]</h1>
+    <p>p태그 사용한 문자열</p>
+    <p id="redtext">p태그 사용한 문자열</p>
+    <p class="bluetext">p태그 사용한 문자열</p>
+    <p class="bluetext">p태그 사용한 문자열</p>
+    <div>
+        <p style="color: aqua;">p태그 사용한 문자열</p>
+        <p>p태그 사용한 문자열</p>
+    </div>
+    <div>
+        <div>
+            <p>p태그 사용한 문자열</p>
+            <p>p태그 사용한 문자열</p>
+        </div>
+    </div>
+
+    <div style="width: 100px; height: 100px; border: 2px solid black;
+                text-overflow: clip; overflow-y: scroll;">
+        div 안의 글자div안의글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div안의 글자 div안의 글자 div안의 글자 div안의 글자 div안의 글자 div안의 글자 
+        div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div 안의 글자 div안의 글자 div안의 글자 div안의 글자 div안의 글자 div안의 글자 div안의 글자 div안의 글자 
+    </div>
+    <div id="textDiv">
+        wwwwwwwwwwwwwwwwwwwwwwww
+        <img src="../Test_HTML/images/kakugo.png" alt="">
+    </div>
+    <div id ="a"></div>
+    <div id ="b"></div>
+    <div id ="c"></div>
+</body>
+</html>

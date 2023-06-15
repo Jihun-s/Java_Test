@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>[ Test Form 1]</title>
+</head>
+<script>
+	function validateForm(){
+		let num1 = document.getElementsByClassName("numC")[0].value;
+		let num2 = document.getElementsByClassName("numC")[1].value;
+		
+		if (isNaN(num1) || isNaN(num2)) {
+			alert("숫자를 입력해주세요.");
+			return false;
+		}
+	}
+</script>
+<body>
+	<h1>[ Test Form 1 ]</h1>
+	<form action="calc1" method="post" onsubmit="return validateForm()">
+		입력1 <input type="text" name="num1" class="numC"><br>
+		입력2 <input type="text" name="num2" class="numC">
+			  <input type="submit" value="저장">
+	</form>
+</body>
+</html>

@@ -1,0 +1,62 @@
+h1{
+    text-align: center;
+}
+#boardTable{
+    width: 98%;
+    margin: 5px auto;
+}
+label{
+    margin: 15px;
+}
+p{
+    margin: 3px auto;
+}
+#boardName{
+    background-color: lightgray;
+}
+#board{
+    background-color: rgb(242, 242, 242);
+}
+#num{
+    width: 10%;
+}
+#name{
+    width: 30%;
+}
+#user{
+    width: 10%;
+}
+#count{
+    width: 10%;
+}
+#date{
+    width: 10%;
+}
+.num{
+    text-align: center;
+}
+.user{
+    text-align: center;
+}
+.count{
+    text-align: center;
+}
+#nav{
+    margin: auto;
+}
+.button{
+    padding: 8px;
+}
+.selectType{
+    text-align: center;
+}
+#label, #label1{
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#label1{
+    width: 13%;
+}

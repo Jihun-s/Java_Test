@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 기초 문법</title>
+    <script>
+        //함수 정의
+        function test1(){
+            /*
+                Javascript에서 제공하는 함수를 이용한 출력
+            */
+            alert('javascript의 대화상자');
+            console.log('log 출력');
+        }
+
+        //변수 선언과 값 대입, 타입 (var, let, const)
+        function test2(){
+            console.log(a);
+            //console.log(b);       선언 전 사용은 에러...
+            var a;
+            let b;
+            console.log(a);
+            console.log(b);
+            a = 1;
+            b = 2;
+            console.log(a);
+            console.log(b);
+
+            const c = 10;
+            //c = 11;               const로 선언한 변수는 초기화 이후 값 변경 불가
+
+            var d;
+            console.log(d);
+            console.log(typeof(d));
+            d = 1;
+            console.log(typeof(d));
+            d = 'aaa';
+            console.log(typeof(d));
+        }
+        let n = 0;
+        function test3(){
+            let m = 0;
+            n++;
+            m++;
+            console.log(n,m);
+        }
+
+        function test4(a, b){
+            let c = a + b;
+            alert(a + '+' + b + '=' + c);
+        }
+
+        function test5(){
+            alert('확인 대화상자');
+
+            confirm('선택 대화상자');
+
+            res = prompt('입력 대화상자');
+            console.log(res);
+        }
+
+        //네이버로 이동? 구글로 이동?
+        function test6(){
+            if(confirm('네이버로 이동하시겠습니까?')){
+                location.href = 'http://www.naver.com';
+            }else if(confirm('그럼 구글ㄱㄱ?')){
+                location.href = 'https://google.co.kr';
+            }
+        }
+        //1 ~ 입력받은 수까지 합계
+        function test7(){
+            let str = prompt('정수 입력');              //프롬프트로 받으면 어떤 입력을 받던 String타입으로 들어옴
+            let num = parseInt(str);
+            let n = 0;
+            for(let i = 1; i<=num; i++)
+            {
+                n += i;
+            }
+            alert(n);
+        }
+    </script>
+</head>
+<body>
+    <h1>[ JavaScript 기초 문법 ]</h1>
+    <p><a href="javascript:test1()">test1() 실행</a></p>
+    <p><a href="javascript:test2()">test2() 실행</a></p>
+    <p><a href="javascript:test3()">test3() - 전역변수, 지역변수</a></p>
+    <p><a href="javascript:test4(10, 20)">test4() - 매개변수</a></p>
+    <p><a href="javascript:test5()">대화상자</a></p>
+    <p><a href="javascript:test6()">if문 사용</a></p>
+    <p><a href="javascript:test7()">for문 사용</a></p>
+    
+</body>
+</html>

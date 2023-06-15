@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board</title>
+    <link rel="stylesheet" href="boardList.css">
+</head>
+<body>
+<header>
+    <h1>[ 게시판 ]</h1>
+</header>
+<section>
+    <table id="boardTable">
+        <div id="label">
+            <div>전체 count</div>
+            <div id="label1">
+                <a href=""><div>글쓰기</div></a>
+                <a href=""><div>Home</div></a>
+            </div>
+        </div>
+        <tr id="boardName">
+            <td id="num">
+                <p>번호</p>
+            </td>
+            <td id="name">
+                <p>제목</p>
+            </td>
+            <td id="user">
+                <p>작성자</p>
+            </td>
+            <td id="count">
+                <p>조회수</p>
+            </td>
+            <td id="date">
+                <p>작성일</p>
+            </td>
+        </tr>
+        <tr id="board">
+            <td class="num">
+                <p>111</p>
+            </td>
+            <td>
+                <p>글글글</p>
+            </td>
+            <td class="user">
+                <p>aaa</p>
+            </td>
+            <td class="count">
+                <p>10</p>
+            </td>
+            <td>
+                <p>2023-02-07</p>
+            </td>
+        </tr>
+    </table>
+    <table id="nav">
+        <tr>
+            <td><img src="../Test_HTML/images/rev_play_icon.png" alt="Next" width="20px"></td>
+            <td><img src="../Test_HTML/images/rev_play_icon.png" alt="Next" width="20px"></td>
+            <td><a href="https://www.naver.com"><img src="../Test_HTML/images/rev_play_icon_solid.png" alt="Next" width="20px"></a></td>
+            <td class="button"><a href="">1</a></td>
+            <td class="button"><a href="">2</a></td>
+            <td class="button"><a href="">3</a></td>
+            <td class="button"><a href="">4</a></td>
+            <td class="button"><a href="">5</a></td>
+            <td><a href="https://www.naver.com"><img src="../Test_HTML/images/play_icon_solid.png" alt="Next" width="20px"></a></td>
+            <td><img src="../Test_HTML/images/play_icon.png" alt="Next" width="20px"></td>
+            <td><img src="../Test_HTML/images/play_icon.png" alt="Next" width="20px"></td>
+        </tr>
+    </table>
+    <div class="selectType">
+        <select name="type">
+            <option value="1" selected>제목</option>
+            <option value="2">내용</option>
+            <option value="3">작성자</option>
+            <option value="4">제목 및 내용</option>
+        </select>
+        <input type="text">
+        <input type="submit" value="검색">
+    </div>
+</section>
+<footer>
+
+</footer>
+</body>
+</html>

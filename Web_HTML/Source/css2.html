@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자2</title>
+    <style>
+        /* p { color: red; } */
+        /* div, p { color: blue; } */
+        /* div p { color: blueviolet; } */
+        div.box > div > p { color: aqua; }
+
+        .a { color: red; }
+        .b { background-color: yellow;}
+        .c { border: 2px solid blue; }
+
+        input[type=password] { background-color: yellow;}
+        
+        a {
+            font-size: 20px;
+            font-family: '궁서';
+        }
+        a:link, a:visited { 
+            color: black;
+            text-decoration: none;
+        }
+        a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+        a:active {
+            color:white;
+            background-color: black;
+        }
+
+        table, td {
+            border : 1px solid black;
+            border-collapse: collapse;
+        }
+        td:hover {
+            color: white;
+            background-color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="a b c">[ 선택자 ]</h1>
+    <div class="a">divdiv</div>
+    <div>
+        <p>aaaa</p>
+        <p>bbbb</p>
+    </div>
+    <div class="box">
+        <div>
+            <p>cccc</p>
+            <p>dddd</p>
+        </div>
+    </div>
+
+    <form>
+        <input type="text"><br>
+        <input type="password"><br>
+        <input type="checkbox" checked>aaaa<br>
+        <input type="checkbox">bbbb<br>
+        <input type="submit">
+    </form>
+
+    <p><a href="http://www.naver.com" target="_blank">네이버로 이동</a></p>
+
+    <table>
+        <tr><td>aaaaaaaaaaaaa</td><td>aaaaaaaaaaaaa</td></tr>
+        <tr><td>aaaaaaaaaaaaa</td><td>aaaaaaaaaaaaa</td></tr>
+    </table>
+</body>
+</html>

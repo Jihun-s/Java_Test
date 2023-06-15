@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form tag</title>
+</head>
+<body>
+    <h1>[ Form ]</h1>
+
+    <form action="" method="get">
+        text            <input type="text" name="name"><br>
+        password        <input type="password"><br>
+        hidden          <input type="hidden" name="num" value="1"><br>
+        text의 속성들    <input type="text" value="입력값"><br>
+                        <input type="text" placeholder="이곳에 이름을 입력하세요." 
+                            size="10" maxlength="10" readonly="readonly"><br>
+        tel             <input type="tel"><br>
+        url             <input type="url"><br>
+        email           <input type="email"><br>
+        number          <input type="number"><br>
+        checkbox        <input type="checkbox" name="email" value="yes" checked><br>
+        radio           <input type="radio" name="com" value="k">KT
+                        <input type="radio" name="com" value="l" checked>LGT
+                        <input type="radio" name="com" value="s">SK<br>
+        file            <input type="file"><br>
+        color           <input type="color"><br>
+        date            <input type="date"><br>
+        
+        textarea        <textarea cols="50" rows="5">기본텍스트</textarea><br>
+        select          <select name="job">
+                            <option value="1">학생</option>
+                            <option value="2" selected>회사원</option>
+                            <option value="3">무직</option>
+                        </select><br>
+
+        select 2        <select name="sel" size="4" multiple>
+                            <option value="1">1111</option>
+                            <option value="2">2222</option>
+                            <option value="3">3333</option>
+                            <option value="4">4444</option>
+                            <option value="5">5555</option>
+                            <option value="6">6666</option>
+                            <option value="7">7777</option>
+                            <option value="8">8888</option>
+                        </select><br>
+
+                        <input type="submit" value="전송"><br>
+                        <input type="reset" value="취소"><br>
+                        <input type="button" value="버튼"><br>
+                    </form>
+
+</body>
+</html>

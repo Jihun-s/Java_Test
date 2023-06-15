@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+
+    <script src="test.js"></script>
+
+    <script>
+        function btClick() {
+            alert('이벤트');
+        }
+        function textEvent() {
+            console.log('focus 이벤트');
+        }
+        function textInput() {
+            //입력한 글자수를 화면에 출력
+            let n = document.getElementById('text1').value.length;
+            let span1 = document.getElementById('span1');
+            span1.innerHTML = n + '글자';
+        }
+
+        let cnt = 0;
+        function addInput() {
+            let d = document.getElementById('div1');
+            d.innerHTML += '<p><input type="text" name="text" id="text' + cnt++ + '"></p>';
+        }
+
+        function imgChange() {
+            let img = document.getElementById('img1');
+            img.setAttribute('src', 'image/dog.jpg');
+            img.setAttribute('width', '200');
+        }
+        function imgChange2() {
+            let img = document.getElementById('img1');
+            img.setAttribute('src', 'image/pen.png');
+            img.setAttribute('width', '100');
+        }
+
+        function imgChange3() {
+            //이미지를 클릭할 때마다 다른 이미지로 교체 (준비된 몇 개의 이미지를 번갈아)
+        }
+
+        function changeSelect() {
+            let sel = document.getElementById('sel');
+            alert(sel.selectedIndex + ',' + sel.value);
+        }
+
+        function changeCheck() {
+            let ch = document.getElementById('check');
+            alert(ch.checked);
+        }
+
+        function test() {
+            let input = document.getElementsByClassName('str');
+
+            for (let i = 0; i < input.length; i++) {
+                alert(input[i].value);
+            }
+
+            Array.from(input).forEach(function (i) {
+                alert(i.value);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>[이벤트 처리]</h1>
+    <p>* 클릭 이벤트</p>
+    <p><a href="javascript:btClick()">링크로 함수 호출</a></p>
+    <p onclick="btClick()" style="cursor:pointer;">텍스트의 클릭 이벤트 처리</p>
+    <p><input type="button" value="버튼" onclick="btClick()"></p>
+    <p><img src="image/pen.png" onclick="btClick()"></p>
+
+    <p>* focus 이벤트 외</p>
+    <p><input type="text" 
+        onfocus="textEvent()" 
+        onblur="console.log('blur이벤트');"
+        onmouseenter="console.log('mouseenber')"
+        onmouseleave="console.log('mouseleave')"
+        onkeyup="textInput()"
+        id="text1">
+        <span id="span1"></span>
+    </p>
+
+    <p><input type="button" value="입력란 추가" id="bt1" onclick="addInput()"></p>
+    <div id="div1"></div>
+
+    <p>* mouseenter, mouseleave 이벤트</p>
+    <p><img src="image/pen.png" onmouseenter="imgChange()" onmouseleave="imgChange2()" id="img1"></p>
+
+    <p>* change 이벤트</p>
+    <p>
+        <select id="sel" onchange="changeSelect()">
+            <option value="a">a</option>
+            <option value="b">b</option>
+            <option value="c">c</option>
+        </select>
+    </p>
+    <p><input type="checkbox" id="check" value="체크박스값" onchange="changeCheck()">선택하세요.</p>
+
+    <p>* 여러개의 객체 접근</p>
+    <p><input type="text" class="str"></p>
+    <p><input type="text" class="str"></p>
+    <p><input type="text" class="str"></p>
+    <p><input type="button" value="확인" onclick="test()"></p>
+
+    <p>* 외부 파일에 정의하기</p>
+    <p><input type="button" onclick="test22()" value="외부파일의 함수 호출"></p>
+
+</body>
+</html>
